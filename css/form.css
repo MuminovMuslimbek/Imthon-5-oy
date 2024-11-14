@@ -97,3 +97,12 @@ select {
     cursor: pointer;
     text-align: center;
 }
+
+@media screen and (max-width:330px) {
+    .skills {
+        align-items: center;
+        label {
+            max-width: 100px;
+        }
+    }
+}

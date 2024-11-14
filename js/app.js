@@ -50,7 +50,7 @@ btn && btn.addEventListener('click', function(event) {
     localStorage.setItem('InfoUsers', JSON.stringify(InfoUsers));
     form.reset();
     viewAllDelete();
-    attachDeleteEvents();
+    deleteEl();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.innerHTML += block;
     });
     viewAllDelete();
-    attachDeleteEvents();
+    deleteEl();
 });
 
-function attachDeleteEvents() {
+function deleteEl() {
     let buttons = document.querySelectorAll('#delete');
     buttons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -100,3 +100,5 @@ deleteAll && deleteAll.addEventListener('click', function(event) {
         viewAllDelete();
     }
 });
+
+// Saytni responsivi ham bor ko'rib qoyishingizni tavsiya qilaman.

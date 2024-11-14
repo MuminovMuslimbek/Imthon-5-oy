@@ -47,7 +47,7 @@ export function Validate() {
         position.focus();
         position.style.borderColor = 'red';
         return false;
-    } else if (time.value === '' && jobType.value === '' && location.value === '') {
+    } else if (time.value === '' || jobType.value === '' || location.value === '') {
         alert('Vaqt, Ish turi yoki Joylashuv kiritilmagan!!');
         return false;
     } else if (!python.checked && !react.checked && !JavaScript.checked && !html.checked && !css.checked && !sass.checked) {
