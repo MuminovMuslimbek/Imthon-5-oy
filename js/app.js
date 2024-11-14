@@ -1,4 +1,4 @@
-import { Validate, getLocalStorage, CreateCard } from './index.js'
+import { Validate, getLocalStorage, CreateCard } from './index.js';
 const form = document.querySelector('form');
 const wrapper = document.querySelector('.result_wrapper');
 const logoUrl = document.querySelector('#logo-url');
@@ -49,7 +49,7 @@ btn && btn.addEventListener('click', function(event) {
 
     localStorage.setItem('InfoUsers', JSON.stringify(InfoUsers));
     form.reset();
-    viewAllDelete()
+    viewAllDelete();
     attachDeleteEvents();
 });
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let block = CreateCard(card);
         wrapper.innerHTML += block;
     });
-    viewAllDelete()
+    viewAllDelete();
     attachDeleteEvents();
 });
 
@@ -75,15 +75,16 @@ function attachDeleteEvents() {
                     InfoUsers = InfoUsers.filter(value => value.id != id);
                     localStorage.setItem('InfoUsers', JSON.stringify(InfoUsers));
                     this.closest('.block').remove();
+                    viewAllDelete();
                 }
             }
-            viewAllDelete()
         });
     });
 }
 
 function viewAllDelete() {
-    if (JSON.parse(localStorage.getItem('InfoUsers')).length > 0) {
+    let InfoUsers = JSON.parse(localStorage.getItem('InfoUsers')) || [];
+    if (InfoUsers.length > 0) {
         deleteAll.style.display = "block";
     } else {
         deleteAll.style.display = "none";
@@ -96,6 +97,6 @@ deleteAll && deleteAll.addEventListener('click', function(event) {
     if (isClear) {
         wrapper.innerHTML = '';
         localStorage.removeItem('InfoUsers');
+        viewAllDelete();
     }
-
 });
