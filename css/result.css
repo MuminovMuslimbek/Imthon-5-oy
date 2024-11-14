@@ -4,26 +4,6 @@
     align-items: center;
     gap: 24px;
     padding: 0 15px;
-    button {
-        text-transform: uppercase;
-        padding: 5px 7px;
-        border-radius: 7px;
-        cursor: pointer;
-        border: 1px solid #2B3939;
-        background-color: #5CA5A5;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: -0.1230769231915474px;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        transition: 0.3s;
-        user-select: none;
-        &:active {
-            transform: scale(0.95);
-        }
-    }
 }
 
 .block {
